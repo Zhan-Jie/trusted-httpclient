@@ -49,6 +49,7 @@ public class App {
 
             KeyStore trustedStore = getTrustedStore(caCert);
             TrustManagerFactory tmf = TrustManagerFactory.getInstance(TrustManagerFactory.getDefaultAlgorithm());
+            // 这里如果传入的trustedStore为null，那么会使用系统默认的证书信任存储库
             tmf.init(trustedStore);
 
             TrustManager[] trustManagers = tmf.getTrustManagers();
